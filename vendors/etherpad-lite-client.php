@@ -193,6 +193,21 @@ class EtherpadLiteClient {
     ));
   }
 
+  // returns content of a pad in html format
+  public function getHTML($padID){
+    return $this->call("getHTML", array(
+      "padID" => $padID
+    ));
+  }
+
+  // sets the html content of a pad
+  public function setHTML($padID, $html){
+    return $this->call("setHTML", array(
+      "padID" => $padID, 
+      "html"  => $html
+    ));
+  }
+
   // PAD
   // Group pads are normal pads, but with the name schema
   // GROUPID$PADNAME. A security manager controls access of them and its
